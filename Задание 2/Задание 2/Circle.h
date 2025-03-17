@@ -6,11 +6,10 @@ class Circle
 {
 private:
 	double R;
-	Point O;
 public:
 	Circle();
 	void set_R();
-	void set_O();
 	void calc_S() const;
 	void calc_C() const;
+	void point_comparison(Point user_point, Point center_point);
 };

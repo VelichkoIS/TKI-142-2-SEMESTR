@@ -28,8 +28,15 @@ void Circle::set_R()
 	R = user.input("Введите радиус окружности:");
 }
 
-void Circle::set_O()
+void Circle::point_comparison(Point user_point, Point center_point)
 {
-	Point point;
-	O = point;
+	if (pow((user_point.get_x() - center_point.get_x()), 2) + pow((user_point.get_y() - center_point.get_y()), 2) < R ||
+		pow((user_point.get_x() - center_point.get_x()), 2) + pow((user_point.get_y() - center_point.get_y()), 2) == R)
+	{
+		std::cout << "Точка принадлежит окружности" << std::endl;
+	}
+	else
+	{
+		std::cout << "Точка не принадлежит окружности" << std::endl;
+	}
 }
