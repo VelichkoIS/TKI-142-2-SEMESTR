@@ -132,9 +132,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Point.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="RegularPolygon.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="RegularPolygon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

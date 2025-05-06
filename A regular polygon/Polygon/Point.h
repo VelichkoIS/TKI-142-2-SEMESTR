@@ -1,5 +1,13 @@
 #pragma once
 class Point
 {
+	private:
+private:
+	double x;
+	double y;
+public:
+	Point(const double x = 0, const double y = 0);
+	double getX() const;
+	double getY() const;
 };
 
