@@ -9,5 +9,7 @@ class RegularPolygon
 		virtual double calc_R_of_circumscribed_circle(const double& side, const double& number) const;
 		virtual double read() const;
 		virtual ~RegularPolygon() = default;
+		friend std::ostream& operator<<(std::ostream& os, const RegularPolygon& output);
+		friend std::istream& operator>>(std::istream& is, const RegularPolygon& input);
 };
 
