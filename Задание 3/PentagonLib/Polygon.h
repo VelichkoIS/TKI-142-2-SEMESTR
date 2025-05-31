@@ -1,52 +1,52 @@
-#pragma once
+п»ї#pragma once
 
 #include <string>
 #include <iostream>
 #include "Point.h"
 
 /**
-* @brief абстрактный класс правильного многоугольника
+* @brief Р°Р±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР°
 */
 class Polygon {
 public:
     /**
-    * @brief виртуальный деструктор
+    * @brief РІРёСЂС‚СѓР°Р»СЊРЅС‹Р№ РґРµСЃС‚СЂСѓРєС‚РѕСЂ
     */
     virtual ~Polygon() = default;
     /**
-    * @brief сериализация в строку
+    * @brief СЃРµСЂРёР°Р»РёР·Р°С†РёСЏ РІ СЃС‚СЂРѕРєСѓ
     */
     virtual std::string ToString() const = 0;
     /**
-    * @brief расчет площади фигуры
+    * @brief СЂР°СЃС‡РµС‚ РїР»РѕС‰Р°РґРё С„РёРіСѓСЂС‹
     */
     virtual double Area() const = 0;
     /**
-    * @brief расчет периметра фигуры
+    * @brief СЂР°СЃС‡РµС‚ РїРµСЂРёРјРµС‚СЂР° С„РёРіСѓСЂС‹
     */
     virtual double Perimeter() const = 0;
     /**
-    * @brief расчет радиуса описанной вокруг многоугольника окружности
+    * @brief СЂР°СЃС‡РµС‚ СЂР°РґРёСѓСЃР° РѕРїРёСЃР°РЅРЅРѕР№ РІРѕРєСЂСѓРі РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР° РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
     */
     virtual double CircumscribedRadius() const = 0;
     /**
-    * @brief чтение из потока ввода
-    * @param is поток ввода
+    * @brief С‡С‚РµРЅРёРµ РёР· РїРѕС‚РѕРєР° РІРІРѕРґР°
+    * @param is РїРѕС‚РѕРє РІРІРѕРґР°
     */
     virtual void read(std::istream& is) = 0;
     /**
-    * @brief оператор вывода
-    * @param os поток вывода
-    * @param p правильный многоугольник
+    * @brief РѕРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
+    * @param os РїРѕС‚РѕРє РІС‹РІРѕРґР°
+    * @param p РїСЂР°РІРёР»СЊРЅС‹Р№ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРє
     */
     friend std::ostream& operator<<(std::ostream& os, const Polygon& p)
     {
         os << p.ToString(); return os; 
     }
     /**
-    * @brief оператор ввода
-    * @param is поток ввода
-    * @param p правильный многоугольник
+    * @brief РѕРїРµСЂР°С‚РѕСЂ РІРІРѕРґР°
+    * @param is РїРѕС‚РѕРє РІРІРѕРґР°
+    * @param p РїСЂР°РІРёР»СЊРЅС‹Р№ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРє
     */
     friend std::istream& operator>>(std::istream& is, Polygon& p)
     { 

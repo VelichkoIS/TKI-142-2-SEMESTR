@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+﻿#include <gtest/gtest.h>
 #include "Pentagon.h"
 
 TEST(PentagonTest, ValidPentagonArea) 

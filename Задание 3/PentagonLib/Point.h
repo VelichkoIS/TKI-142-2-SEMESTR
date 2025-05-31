@@ -1,60 +1,60 @@
-#pragma once
+п»ї#pragma once
 
 #include <iostream>
 #include <cmath>
 #include <limits>
 
 /**
-* @brief класс вершины многоугольника
+* @brief РєР»Р°СЃСЃ РІРµСЂС€РёРЅС‹ РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР°
 */
 class Point {
 private:
     double x, y;
 public:
     /**
-    * @brief конструктор класса Point
-    * @param x значение поля x
-    * @param y значчение поля y
+    * @brief РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Point
+    * @param x Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ x
+    * @param y Р·РЅР°С‡С‡РµРЅРёРµ РїРѕР»СЏ y
     */
     Point(double x = 0.0, double y = 0.0);
     /**
-    * @brief возвращает значение поля x
+    * @brief РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ x
     */
     double getX() const;
     /**
-    * @brief возвращает значение поля y
+    * @brief РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ y
     */
     double getY() const;
     /**
-    * @brief оператор "равно"
-    * @param other вершина
+    * @brief РѕРїРµСЂР°С‚РѕСЂ "СЂР°РІРЅРѕ"
+    * @param other РІРµСЂС€РёРЅР°
     */
     bool operator==(const Point& other) const;
     /**
-    * @brief оператор "не равно"
-    * @param other вершина
+    * @brief РѕРїРµСЂР°С‚РѕСЂ "РЅРµ СЂР°РІРЅРѕ"
+    * @param other РІРµСЂС€РёРЅР°
     */
     bool operator!=(const Point& other) const;
     /**
-    * @brief оператор вычитания
-    * @param other вершина
+    * @brief РѕРїРµСЂР°С‚РѕСЂ РІС‹С‡РёС‚Р°РЅРёСЏ
+    * @param other РІРµСЂС€РёРЅР°
     */
     Point operator-(const Point& other) const;
     /**
-    * @brief расчитывает расстояние между вершинами
-    * @param other вершина
+    * @brief СЂР°СЃС‡РёС‚С‹РІР°РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёРµ РјРµР¶РґСѓ РІРµСЂС€РёРЅР°РјРё
+    * @param other РІРµСЂС€РёРЅР°
     */
     double distanceTo(const Point& other) const;
     /**
-    * @brief оператор вывода
-    * @param os поток вывода
-    * @param p вершина
+    * @brief РѕРїРµСЂР°С‚РѕСЂ РІС‹РІРѕРґР°
+    * @param os РїРѕС‚РѕРє РІС‹РІРѕРґР°
+    * @param p РІРµСЂС€РёРЅР°
     */
     friend std::ostream& operator<<(std::ostream& os, const Point& p);
     /**
-    * @brief оператор ввода
-    * @param os поток ввода
-    * @param p вершина
+    * @brief РѕРїРµСЂР°С‚РѕСЂ РІРІРѕРґР°
+    * @param os РїРѕС‚РѕРє РІРІРѕРґР°
+    * @param p РІРµСЂС€РёРЅР°
     */
     friend std::istream& operator>>(std::istream& is, Point& p);
 };
