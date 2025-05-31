@@ -23,7 +23,7 @@ void Pentagon::validateSides()
     {
         size_t j = (i + 1) % 5;
         double s = verts[i].distanceTo(verts[j]);
-        if (s <= 0)
+        if (s < numeric_limits<double>::epsilon())
             throw logic_error("Длина стороны должна быть положительной.");
         else if (abs(s - side) > numeric_limits<double>::epsilon())
         {

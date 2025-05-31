@@ -24,11 +24,6 @@ bool Point::operator!=(const Point& other) const
     return !(*this == other);
 }
 
-Point Point::operator-(const Point& other) const 
-{
-    return Point(x - other.x, y - other.y);
-}
-
 double Point::distanceTo(const Point& other) const 
 {
     return std::sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));

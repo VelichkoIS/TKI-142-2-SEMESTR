@@ -36,11 +36,6 @@ public:
     */
     bool operator!=(const Point& other) const;
     /**
-    * @brief оператор вычитания
-    * @param other вершина
-    */
-    Point operator-(const Point& other) const;
-    /**
     * @brief расчитывает расстояние между вершинами
     * @param other вершина
     */
