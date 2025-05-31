@@ -17,13 +17,13 @@ double Pentagon::getSide() const
     return side;
 }
 
-void Pentagon::validateSides() 
+void Pentagon::validateSides()
 {
-    for (size_t i = 0; i < 5; ++i) 
+    for (size_t i = 0; i < 5; ++i)
     {
         size_t j = (i + 1) % 5;
         double s = verts[i].distanceTo(verts[j]);
-        if (s <= 0) 
+        if (s <= 0)
             throw logic_error("Длина стороны должна быть положительной.");
         else if (abs(s - side) > numeric_limits<double>::epsilon())
         {
@@ -32,7 +32,7 @@ void Pentagon::validateSides()
     }
 }
 
-string Pentagon::ToString() const 
+string Pentagon::ToString() const
 {
     ostringstream ss;
     ss << "Пятиугольник: ";
@@ -43,17 +43,17 @@ string Pentagon::ToString() const
     return ss.str();
 }
 
-double Pentagon::Area() const 
+double Pentagon::Area() const
 {
-    return (5.0 / 4.0) * pow(side,2) *(1.0 / tan(M_PI / 5.0));
+    return (5.0 / 4.0) * pow(side, 2) * (1.0 / tan(M_PI / 5.0));
 }
 
-double Pentagon::Perimeter() const 
+double Pentagon::Perimeter() const
 {
     return 5 * side;
 }
 
-double Pentagon::CircumscribedRadius() const 
+double Pentagon::CircumscribedRadius() const
 {
     return side / (2 * sin(M_PI / 5.0));
 }
@@ -65,12 +65,12 @@ void Pentagon::read(istream& is) {
     validateSides();
 }
 
-bool Pentagon::operator==(const Pentagon& other) const 
-{ 
+bool Pentagon::operator==(const Pentagon& other) const
+{
     return verts == other.verts;
 }
 
-bool Pentagon::operator!=(const Pentagon& other) const 
+bool Pentagon::operator!=(const Pentagon& other) const
 {
-    return !(*this == other); 
+    return !(*this == other);
 }

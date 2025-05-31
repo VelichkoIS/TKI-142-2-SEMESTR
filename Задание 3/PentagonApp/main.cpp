@@ -26,7 +26,7 @@ int main() {
         verts[i] = Point(x, y);
     }
 
-    try 
+    try
     {
         Pentagon p(verts);
         cout << "\n--- Результат ---\n";
@@ -37,7 +37,7 @@ int main() {
         cout << "Радиус описанной окружности: " << p.CircumscribedRadius() << endl;
     }
 
-    catch(logic_error)
+    catch (logic_error)
     {
         cerr << "\nОшибка: " << endl;
         cerr << "Введённые точки не образуют правильный пятиугольник. Проверьте координаты, порядок обхода и равенство сторон.\n";

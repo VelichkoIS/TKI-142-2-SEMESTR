@@ -1,60 +1,61 @@
-#pragma once
+п»ї#pragma once
 
 #include <array>
 #include <string>
 #include "Polygon.h"
 
 /**
-* @brief класс правильного пятиугольника
+* @brief РєР»Р°СЃСЃ РїСЂР°РІРёР»СЊРЅРѕРіРѕ РїСЏС‚РёСѓРіРѕР»СЊРЅРёРєР°
 */
 class Pentagon : public Polygon {
 private:
     std::array<Point, 5> verts;
     double side;
     /**
-    * @brief проверка пятиугольника на правильность
+    * @brief РїСЂРѕРІРµСЂРєР° РїСЏС‚РёСѓРіРѕР»СЊРЅРёРєР° РЅР° РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ
     */
     void validateSides();
 public:
     /**
-    * @brief конструктор класса Pentagon
-    * @param verts массив из точек
+    * @brief РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєР»Р°СЃСЃР° Pentagon
+    * @param verts РјР°СЃСЃРёРІ РёР· С‚РѕС‡РµРє
     */
     Pentagon(const std::array<Point, 5>& verts);
     /**
-    * @brief возвращает значение поля side
+    * @brief РІРѕР·РІСЂР°С‰Р°РµС‚ Р·РЅР°С‡РµРЅРёРµ РїРѕР»СЏ side
     */
     double getSide() const;
     /**
-    * @brief сериализация в строку
+    * @brief СЃРµСЂРёР°Р»РёР·Р°С†РёСЏ РІ СЃС‚СЂРѕРєСѓ
     */
     std::string ToString() const override;
     /**
-    * @brief расчет площади фигуры
+    * @brief СЂР°СЃС‡РµС‚ РїР»РѕС‰Р°РґРё С„РёРіСѓСЂС‹
     */
     double Area() const override;
     /**
-    * @brief расчет периметра фигуры
+    * @brief СЂР°СЃС‡РµС‚ РїРµСЂРёРјРµС‚СЂР° С„РёРіСѓСЂС‹
     */
     double Perimeter() const override;
     /**
-    * @brief расчет радиуса описанной вокруг многоугольника окружности
+    * @brief СЂР°СЃС‡РµС‚ СЂР°РґРёСѓСЃР° РѕРїРёСЃР°РЅРЅРѕР№ РІРѕРєСЂСѓРі РјРЅРѕРіРѕСѓРіРѕР»СЊРЅРёРєР° РѕРєСЂСѓР¶РЅРѕСЃС‚Рё
     */
     double CircumscribedRadius() const override;
     /**
-    * @brief чтение из потока ввода
-    * @param is поток ввода
+    * @brief С‡С‚РµРЅРёРµ РёР· РїРѕС‚РѕРєР° РІРІРѕРґР°
+    * @param is РїРѕС‚РѕРє РІРІРѕРґР°
     */
     void read(std::istream& is) override;
     /**
-    * @brief оператор "равно"
-    * @param other правильный пятиугольник
+    * @brief РѕРїРµСЂР°С‚РѕСЂ "СЂР°РІРЅРѕ"
+    * @param other РїСЂР°РІРёР»СЊРЅС‹Р№ РїСЏС‚РёСѓРіРѕР»СЊРЅРёРє
     */
     bool operator==(const Pentagon& other) const;
     /**
-    * @brief оператор "не равно"
-    * @param other правильный пятиугольник
+    * @brief РѕРїРµСЂР°С‚РѕСЂ "РЅРµ СЂР°РІРЅРѕ"
+    * @param other РїСЂР°РІРёР»СЊРЅС‹Р№ РїСЏС‚РёСѓРіРѕР»СЊРЅРёРє
     */
     bool operator!=(const Pentagon& other) const;
 };
+
 
